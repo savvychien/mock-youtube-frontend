@@ -1,21 +1,10 @@
 'use client'
 
-import { fetchPlaylistsApi } from "@/apis/playlist";
 import { PlaylistCardList } from "@/components/playlist/PlaylistCardList";
-import { Playlist } from "@/types/playlist";
-import { useEffect, useState } from "react";
+import { usePlaylists } from "@/components/usePlaylists";
 
 export default function PlaylistPage () {
-  const [playlists, setPlaylists] = useState<Playlist[]>([])
-
-  useEffect(() => {
-    const getPlaylists = async () => {
-      const data = await fetchPlaylistsApi()
-      setPlaylists(data)
-    }
-
-    getPlaylists()
-  }, [])
+  const {playlists, setPlaylists} = usePlaylists()
 
   return (
     <div className="container mx-auto pt-5">

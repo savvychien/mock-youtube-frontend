@@ -1,6 +1,7 @@
 export interface Video {
   id: number
   title: string
+  video_id: string
   views: number
   likes: number
   comments: number

@@ -69,7 +69,7 @@ export const addVideoToPlaylistApi = async (playlistId: number, dto: AddVideoDto
 
 export const removeVideoFromPlaylistApi = async (playlistId: string, video_id: string) => {
   try {
-    const response = await axios.delete(`${BASE_URL}/${playlistId}/remove_video`, { video_id });
+    const response = await axios.delete(`${BASE_URL}/${playlistId}/remove_video/${video_id}`);
     return response.data;
   } catch (error) {
     console.error("Error deleting video from a playlist:", error);
@@ -77,7 +77,7 @@ export const removeVideoFromPlaylistApi = async (playlistId: string, video_id: s
   }
 }
 
-export const getVideosFromPlaylistApi = async (playlistId: number): Promise<PlaylistVideoResponse> => {
+export const fetchVideosFromPlaylistApi = async (playlistId: number): Promise<PlaylistVideoResponse> => {
   try {
     const response = await axios.get<PlaylistVideoResponse>(`${BASE_URL}/${playlistId}/videos`);
     return response.data;
