@@ -13,7 +13,7 @@ export const Header = () => {
         href="/playlist"
         className="text-gray-400 hover:text-black transition-colors"
       >
-        Playlist
+        My Playlist
       </Link>
     </div>
   );

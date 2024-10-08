@@ -1,7 +1,7 @@
 'use client'
 
 import { fetchVideosApi } from "@/apis/video";
-import { VideoCardList } from "@/components/VideoCardList";
+import { VideoCardList } from "@/components/video/VideoCardList";
 import { Video } from "@/types/video";
 import { useEffect, useState } from "react";
 
@@ -15,7 +15,7 @@ export default function Home() {
   const router = useRouter()
 
   const searchParams = useSearchParams()
-  
+
   const page = Number(searchParams.get('page')) || 1
   const title = searchParams.get('title') || ''  
 

@@ -1,5 +1,5 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
-import { Button } from "./Button";
+import { Button } from "./ui/Button";
 
 interface IPagination {
   total: number

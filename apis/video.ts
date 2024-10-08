@@ -7,6 +7,8 @@ type VideoResponse = {
   videos: Video[]
 }
 
+const BASE_URL = '/api/youtube_videos'
+
 export const fetchVideosApi = async (page: number = 1, title?: string): Promise<VideoResponse> => {
   try {
     const params = new URLSearchParams();
@@ -16,7 +18,7 @@ export const fetchVideosApi = async (page: number = 1, title?: string): Promise<
       params.append('title', title);
     }
 
-    const response = await axios.get<VideoResponse>(`/youtube_videos?${params.toString()}`);
+    const response = await axios.get<VideoResponse>(`${BASE_URL}?${params.toString()}`);
     return response.data;
   } catch (error) {
     console.error("Error fetching videos:", error);
